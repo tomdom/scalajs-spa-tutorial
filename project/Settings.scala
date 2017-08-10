@@ -1,5 +1,6 @@
 import sbt._
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
+import play.sbt.PlayImport._
 
 /**
  * Application settings. Configure the build for your application here.
@@ -22,22 +23,22 @@ object Settings {
 
   /** Declare global dependency versions here to avoid mismatches in multi part dependencies */
   object versions {
-    val scala = "2.11.11"
-    val scalaDom = "0.9.2"
-    val scalajsReact = "1.0.1"
+    val scala = "2.12.3"
+    val scalaDom = "0.9.3"
+    val scalajsReact = "1.1.0"
     val scalaCSS = "0.5.3"
     val log4js = "1.4.10"
     val autowire = "0.2.6"
     val booPickle = "1.2.6"
     val diode = "1.1.2"
-    val uTest = "0.4.7"
+    val uTest = "0.4.8"
 
-    val react = "15.5.4"
-    val jQuery = "1.11.1"
+    val react = "15.6.1"
+    val jQuery = "2.2.4"
     val bootstrap = "3.3.6"
-    val chartjs = "2.1.3"
+    val chartjs = "2.4.0"
 
-    val scalajsScripts = "1.0.0"
+    val scalajsScripts = "1.1.1"
   }
 
   /**
@@ -51,8 +52,9 @@ object Settings {
 
   /** Dependencies only used by the JVM project */
   val jvmDependencies = Def.setting(Seq(
+    guice,
     "com.vmunier" %% "scalajs-scripts" % versions.scalajsScripts,
-    "org.webjars" % "font-awesome" % "4.3.0-1" % Provided,
+    "org.webjars" % "font-awesome" % "4.7.0" % Provided,
     "org.webjars" % "bootstrap" % versions.bootstrap % Provided,
     "com.lihaoyi" %% "utest" % versions.uTest % Test
   ))
